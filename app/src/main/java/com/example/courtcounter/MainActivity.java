@@ -9,16 +9,12 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     static int score = 0;
+    static int scoreB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-
-    public void displayForTeamA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.teamAScore);
-        scoreView.setText(String.valueOf(score));
     }
 
     public void plusThree(View view){
@@ -36,5 +32,23 @@ public class MainActivity extends AppCompatActivity {
         score += 1;
         TextView scoreView = findViewById(R.id.teamAScore);
         scoreView.setText(String.valueOf(score));
+    }
+
+    public void plusTwoB(View view) {
+        scoreB += 2;
+        TextView scoreView = findViewById(R.id.teamBScore);
+        scoreView.setText(String.valueOf(scoreB));
+    }
+
+    public void freeThrowB(View view) {
+        scoreB += 1;
+        TextView scoreView = findViewById(R.id.teamBScore);
+        scoreView.setText(String.valueOf(scoreB));
+    }
+
+    public void plusThreeB(View view) {
+        scoreB += 3;
+        TextView scoreView = findViewById(R.id.teamBScore);
+        scoreView.setText(String.valueOf(scoreB));
     }
 }
